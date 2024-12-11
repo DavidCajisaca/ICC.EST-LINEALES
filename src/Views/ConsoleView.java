@@ -9,13 +9,13 @@ public class ConsoleView {
  
  }
  public void displayMenu(){
-    System.out.println("======= Contact Manager Menu =====");
+    System.out.println("======= Menu =====");
     System.out.println("1. Add a contact");
     System.out.println("2. Find contact");
     System.out.println("3. Delete contact");
     System.out.println("4. Print contact");
     System.out.println("5. Exit");
-    System.out.print("Enter your choice: ");
+    System.out.print("Ingrese la opcion 🫡: ");
 
  }
     public String getinput(String promt){

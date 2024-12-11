@@ -10,8 +10,11 @@ public class App {
         //System.out.println("Hello, World!");
         //runStack();  
         //runStackGeneric(); 
-        runQueue(); 
-        runQueueGeneric();        
+        //runQueue(); 
+        //runQueueGeneric(); 
+        runContactManager();       
+                    
+
     }
     public static void runStack() {
         Stack stack = new Stack();
@@ -71,9 +74,10 @@ public class App {
         System.out.println(queue.size());
     }
     
-    public static void LlamarContact(){
-        MenuController controller = new MenuController();
-        controller.ShowMenu();
-        
+    
+    private static void runContactManager() {   
+        MenuController menuController = new MenuController();
+        menuController.showMenu();
     }
+
 }
