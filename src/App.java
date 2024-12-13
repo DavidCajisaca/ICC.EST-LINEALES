@@ -1,4 +1,6 @@
-import Controllers.MenuController;
+import Ejercicio_01_sign.SignValidator;
+import Ejercicio_02_sorting.StackSorter;
+import java.util.Scanner;
 import materia.Queues.Queue;
 import materia.Queues.QueueGeneric;
 import materia.Stacks.Stack;
@@ -12,8 +14,9 @@ public class App {
         //runStackGeneric(); 
         //runQueue(); 
         //runQueueGeneric(); 
-        runContactManager();       
-                    
+        //runContactManager();       
+        runSingValidator();
+        runStackSorter();            
 
     }
     public static void runStack() {
@@ -75,9 +78,36 @@ public class App {
     }
     
     
-    private static void runContactManager() {   
-        MenuController menuController = new MenuController();
-        menuController.showMenu();
+   // private static void runContactManager() {   
+   //     MenuController menuController = new MenuController();
+   //    menuController.showMenu();
+   // 
+      private static void runSingValidator() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese una cadena de signos: ");
+        String input = scanner.nextLine();
+        System.out.println("El resultado de la validación es: " + SignValidator.esValido(input));
     }
-
+    private static void runStackSorter() {
+        Scanner scanner = new Scanner(System.in);
+        StackGeneric<Integer> stack = new StackGeneric<>();
+        System.out.println("Ingrese números para el stack (escriba 'fin' para terminar):");
+        
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("fin")) {
+                break;
+            }
+            try {
+                stack.push(Integer.parseInt(input));
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, ingrese un número válido.");
+            }
+        }
+        
+        System.out.println("Stack original: " + stack);
+        StackSorter.ordenar(stack); 
+        System.out.println("Stack ordenado: " + stack);
+        scanner.close();
+    }
 }
